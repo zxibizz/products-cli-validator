@@ -1,0 +1,23 @@
+[project]
+name = "products-cli-validator"
+version = "0.1.0"
+description = "Container-based validation harness for the Products CLI take-home assignment."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pytest>=8.2",
+    "testcontainers>=4.5",
+    "docker>=7.1",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -v"
+filterwarnings = [
+    # testcontainers 4.x deprecates string/callable predicates for wait_for_logs;
+    # the current API still works across the supported version range.
+    "ignore:The wait_for_logs function.*:DeprecationWarning",
+]

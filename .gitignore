@@ -1,0 +1,20 @@
+# Ignore extracted candidate submissions (kept locally, not committed).
+submissions/*
+!submissions/.gitkeep
+
+# Generated Dockerfiles written into submissions during a run.
+**/Dockerfile.validation
+
+# Local pointer to the submission currently under test.
+.current_submission
+
+# Generated scorecard artifact written at the end of each run.
+last_scorecard.json
+
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.uv/
+*.egg-info/
